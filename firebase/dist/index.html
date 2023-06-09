@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Sportiv</title>
+</head>
+<body>
+    <h1>Test Club Sportiv</h1>
+    <h2>Comentarii</h2>
+    <form class="add">
+        <label for="nume">Nume</label>
+        <input type="text" name="nume" required>
+        <label for="prenume">Prenume</label>
+        <input type="text" name="prenume" required>
+        <label for="comentariu">Comentariu</label>
+        <input type="text" name="comentariu" required>
+    
+        <button>adaugare Comentariu</button>
+      </form>
+      <form class="delete">
+        <label for="id">Id-ul comentariului</label>
+        <input type="text" name="id" required>
+        <button>stergere Comentariul</button>
+      </form>
+
+      <form class="signup">
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+        <label for="password">Parola</label>
+        <input type="text" name="password" required>
+        <button>Adaugare Utilizator</button>
+      </form>
+      <form class="login">
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+        <label for="password">Parola</label>
+        <input type="text" name="password" required>
+        <button>Autentificare</button>
+      </form>
+    <button class="logout">Delogare</button>
+    
+    <section id="whenSignedOut">
+
+      <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+
+    </section>
+
+    <section id="whenSignedIn" hidden="true">
+
+      <div id="userDetails"></div>
+
+      <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+      
+    </section>
+
+<script src="app.js" defer></script>
+
+     
+ 
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+< <!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCWF3fdivIjXZRSPVASQCxmZyiC2ZWGsFU",
+      authDomain: "club-sportiv-3439e.firebaseapp.com",
+      databaseURL: "https://club-sportiv-3439e-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "club-sportiv-3439e",
+      storageBucket: "club-sportiv-3439e.appspot.com",
+      messagingSenderId: "1006188733621",
+      appId: "1:1006188733621:web:beb7efb3d08ad202b9cafc",
+      measurementId: "G-CJVN06MEKC"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>ClubStudent</title>
+</head>
+<body class="grey lighten-3"">
+
+<!-- NAVBAR -->
+<nav class="z-depth-0 grey lighten-4">
+  <div class="nav-wrapper container">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <span>
+        <li class="logged-in">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logout">
+          <a href="#" class="grey-text" id="logout">Logout</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
+      </span>
+    </ul>
+  </div>
+</nav>
+
+<!-- SIGN UP MODAL -->
+<div id="modal-signup" class="modal" class="signup">
+  <div class="modal-content">
+    <h4>Sign up</h4><br />
+    <form class="signup">
+      <div class="input-field" class="signup">
+        <input type="email" id="email" required />
+        <label for="email">Email address</label>
+      </div>
+      <div class="input-field"class="signup">
+        <input type="password" id="password" required />
+        <label for="password">Alege Parola</label>
+      </div>
+      
+      <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      <!-- <label for="email">Email</label>
+      <input type="text" name="email" required>
+      <label for="password">Parola</label>
+      <input type="text" name="password" required>
+      <button class="btn yellow darken-2 z-depth-0">Sign up</button> -->
+    </form>
+  </div>
+</div>
+<!-- SUBSCRIPTION MODAL -->
+<div id="modal-abonamente" class="modal" class="abonamente">
+  <div class="modal-content">
+    <h4>Introduceti datele personale</h4><br />
+    <form class="AbonamentRosu">
+      <div class="input-field"class="AbonamentRosu">
+        <input type="text" id="nume" required />
+        <label for="nume">Nume</label>
+      </div>
+      <div class="input-field"class="AbonamentRosu">
+        <input type="text" id="prenume" required />
+        <label for="prenume">Prenume</label>
+      </div>
+      <div class="input-field" class="AbonamentRosu">
+        <input type="email" id="email" required />
+        <label for="email">Email address</label>
+      </div>
+      <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+    </form>
+  </div>
+</div>
+<!-- LOGIN MODAL -->
+<div id="modal-login" class="modal">
+  <div class="modal-content">
+    <h4>Login</h4><br />
+    <form class="login">
+      <div class="input-field" class="login">
+        <input type="email" id="email" required />
+        <label for="email">Adresa de email</label>
+      </div>
+      <div class="input-field"class="login">
+        <input type="password" id="password" required />
+        <label for="password">Parola</label>
+      </div>
+      <button class="btn yellow darken-2 z-depth-0">Log in</button>
+    </form>
+  </div>
+</div>
+
+<!-- ACCOUNT MODAL -->
+<div id="modal-account" class="modal">
+  <div class="modal-content center-align">
+    <h4>Account details</h4><br />
+    <div class="account-details"></div>
+  </div>
+</div>
+
+
+<!-- COMMENT MODAL -->
+<div id="modal-comment" class="modal" class="add">
+  <div class="modal-content">
+    <h4>Comenteaza</h4><br />
+      <form class="add">
+        <label for="nume">Nume</label>
+        <input type="text" name="nume" required>
+        <label for="prenume">Prenume</label>
+        <input type="text" name="prenume" required>
+        <label for="comentariu">Comentariu</label>
+        <input type="text" name="comentariu" required>
+    
+        <button class="btn yellow darken-2 z-depth-0">adaugare Comentariu</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <h1>Test Club Sportiv</h1>
+  <!-- SUBSCRIPTION LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+      <li>
+        <div class="collapsible-header grey lighten-4"> Abonanment rosu </div>
+        <div class="collapsible-body white"><span>Numar de sedinte: 8 <br> Pret: 250 RON <br> Nu include pretul arcului <br>Necesita initiere <br> <a href="#" class="grey-text modal-trigger" data-target="modal-abonamente" id="AbonareRosu" > <button class="btn yellow darken-2 z-depth-0">Alege</button> </a> 
+        </span>
+      <li>
+        <div class="collapsible-header grey lighten-4">Abonament galben</div>
+        <div class="collapsible-body white"><span>Numar de sedinte: 8 <br> Pret: 300 RON <br> Nu include pretul arcului <br> Nu necesita initiere <br> <a href="#" class="grey-text modal-trigger" data-target="modal-abonamente" id="AbonareRosu" > <button class="btn yellow darken-2 z-depth-0">Alege</button> </a> </span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Abonament verde</div>
+        <div class="collapsible-body white"><span>Numar de sedinte: 8 <br> Pret: 300 RON <br> Include pretul arcului <br> Necesita initiere <br> <a href="#" class="grey-text modal-trigger" data-target="modal-abonamente" id="AbonareRosu" > <button class="btn yellow darken-2 z-depth-0">Alege</button> </a> </span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Abonament alb</div>
+        <div class="collapsible-body white"><span>Numar de sedinte: Nelimiate <br> Pret: 200 RON <br> Nu include pretul arcului <br> Nu necesita initiere <br> <a href="#" class="grey-text modal-trigger" data-target="modal-abonamente" id="AbonareRosu" > <button class="btn yellow darken-2 z-depth-0">Alege</button> </a> </span></div>
+      </li>
+    </ul>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/index.js"></script>
+    
+    <h4>Comentarii</h4>
+
+    <a href="#" class="grey-text modal-trigger" data-target="modal-comment" id="comment" > <button class="btn yellow darken-2 z-depth-0">Adauga un comentariu</button> </a>
+
+    <!-- <form class="add">
+        <label for="nume">Nume</label>
+        <input type="text" name="nume" required>
+        <label for="prenume">Prenume</label>
+        <input type="text" name="prenume" required>
+        <label for="comentariu">Comentariu</label>
+        <input type="text" name="comentariu" required>
+    
+        <button class="btn yellow darken-2 z-depth-0">adaugare Comentariu</button>
+      </form>
+
+
+      <form class="delete">
+        <label for="id">Id-ul comentariului</label>
+        <input type="text" name="id" required>
+        <button>stergere Comentariul</button>
+      </form> -->
+
+      <!-- <form class="signup">
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+        <label for="password">Parola</label>
+        <input type="text" name="password" required>
+        <button>Adaugare Utilizator</button>
+      </form>
+      <form class="login">
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+        <label for="password">Parola</label>
+        <input type="text" name="password" required>
+        <button>Autentificare</button>
+      </form>
+    <button class="logout">Delogare</button> -->
+    
+      <script src="bundle.js"></script>
+      <script src="app.js"></script>
+      <script src="/src/index.js"></script>
+</body>
+</html>
